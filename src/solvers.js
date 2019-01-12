@@ -33,6 +33,13 @@ window.findNRooksSolution = function(n) {
 window.countNRooksSolutions = function(n) {
   var solutionCount = undefined; //fixme
 
+  let factorial = n;
+  if (factorial <= 1) { return 1; }
+  for (let i = n - 1; i > 1; i--) {
+    factorial *= i;
+  }
+
+  solutionCount = factorial;
   console.log('Number of solutions for ' + n + ' rooks:', solutionCount);
   return solutionCount;
 };
